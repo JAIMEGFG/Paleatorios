@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Shuffle"
+    android:weightSum="1"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:text="GANADORES"
+        android:textSize="35dp"
+        android:layout_gravity="center"
+        android:textAlignment="center" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:weightSum="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Introduce Nombre"
+            android:textSize="15dp">
+        </TextView>
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="match_parent"
+            android:hint="Nombre"
+            android:inputType="textPersonName"
+            android:textSize="15dp"
+            android:id="@+id/nombre">
+        </EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:layout_gravity="center">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Generar Ganador"
+            android:textSize="15dp"
+            android:gravity="left"
+            android:thumb="@drawable/repeat"
+            android:id="@+id/generarGanador"
+            android:backgroundTint="@color/botonGanadores"
+            android:textColor="@color/colorBoton">
+        </Button>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agregar Concursante"
+            android:textSize="15dp"
+            android:gravity="left"
+            android:thumb="@drawable/repeat"
+            android:id="@+id/agregarConcursante"
+            android:backgroundTint="@color/botonGanadores"
+            android:textColor="@color/colorBoton">
+        </Button>
+    </LinearLayout>
+
+
+
+</LinearLayout>
