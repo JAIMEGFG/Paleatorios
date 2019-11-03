@@ -11,126 +11,38 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.1"
-        android:text="Genereador de Aleatorios"
-        android:textSize="35dp"
+        android:text="JUGUEMOS A LOS DADOS!"
+        android:textSize="30dp"
         android:layout_gravity="center"
         android:textAlignment="center" />
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.2"
-        android:weightSum="1"
-        android:id="@+id/radioGroup">
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5"
-            android:textSize="20dp"
-            android:text="Sin rango específico"
-            android:id="@+id/sinRangoEspecifico">
-        </RadioButton>
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5"
-            android:textSize="20dp"
-            android:text="Con rasgo específico"
-            android:id="@+id/conRangoEspecifico">
-        </RadioButton>
-    </RadioGroup>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.1"
         android:weightSum="1"
         android:orientation="horizontal">
-        <EditText
-            android:layout_width="0dp"
-            android:layout_weight="0.3"
-            android:layout_height="match_parent"
-            android:hint="Mínimo"
-            android:inputType="number"
-            android:textSize="20dp"
-            android:id="@+id/minimo">
-        </EditText>
-        <EditText
-            android:layout_width="0dp"
-            android:layout_weight="0.3"
-            android:layout_height="match_parent"
-            android:hint="Máximo"
-            android:inputType="number"
-            android:textSize="20dp"
-            android:id="@+id/maximo">
-        </EditText>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1"
-        android:weightSum="1"
-        android:orientation="horizontal">
-        <CheckBox
-            android:layout_width="0dp"
-            android:layout_weight="0.5"
-            android:layout_height="match_parent"
-            android:text="Permitir decimales"
-            android:textSize="15dp"
-            android:id="@+id/siDecimales">
-        </CheckBox>
-        <EditText
-            android:layout_width="0dp"
-            android:layout_weight="0.5"
-            android:layout_height="match_parent"
-            android:hint="Número de Decimales"
-            android:inputType="number"
-            android:textSize="15dp"
-            android:id="@+id/numeroDecimales">
-        </EditText>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1"
-        android:weightSum="1"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="0.5"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="Cuántos quieres generar?"
-            android:textSize="15dp">
-        </TextView>
-        <EditText
-            android:layout_width="0dp"
-            android:layout_weight="0.5"
-            android:layout_height="match_parent"
-            android:hint="Número de totales"
-            android:inputType="number"
-            android:textSize="15dp"
-            android:id="@+id/numeroTotales">
-        </EditText>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="0.1">
-        <Switch
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Repetir Números "
-            android:textSize="15dp"
-            android:gravity="left"
-            android:thumb="@drawable/repeat"
-            android:id="@+id/repetir">
-        </Switch>
+            android:text="lanzar dados"
+            android:textSize="30dp"
+            android:textAlignment="center"
+            android:id="@+id/lanzarDados"
+            android:backgroundTint="@color/botonGanadores"
+            android:textColor="@color/colorBoton">
+        </Button>
     </LinearLayout>
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@drawable/startup"
-        android:backgroundTint="@color/colorBoton"
-        android:id="@+id/cohete">
-    </ImageButton>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imagenDados"
+            android:backgroundTint="@color/colorBoton">
+        </ImageView>
+    </LinearLayout>
 </LinearLayout>

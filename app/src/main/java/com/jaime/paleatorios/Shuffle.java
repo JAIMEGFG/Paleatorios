@@ -68,7 +68,7 @@ public class Shuffle extends AppCompatActivity implements RadioGroup.OnCheckedCh
     @Override
     public void onClick(View v) {
         Random r = new Random();
-        int i1 = r.nextInt(maximo-minimo) + minimo;
+        int i1 = r.nextInt(100-50) + 50;
 
         }
 

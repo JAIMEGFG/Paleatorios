@@ -1,20 +1,19 @@
 package com.jaime.paleatorios;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.os.Handler;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
-public class Dices extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
+public class Dices extends AppCompatActivity implements View.OnClickListener {
 
+    Button lanzarDados;
+    ImageView imagenDados;
+    private int[] idImagenes = idImagenes.toArray();
 
-    RadioButton sinRangoEspecifico, conRangoEspecifico;
-    RadioGroup radioGroup;
-    EditText minimo,maximo,numeroDecimales;
-    CheckBox siDecimales;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,34 +24,35 @@ public class Dices extends AppCompatActivity implements RadioGroup.OnCheckedChan
     }
 
     private void instancias() {
-        sinRangoEspecifico = findViewById(R.id.sinRangoEspecifico);
-        conRangoEspecifico = findViewById(R.id.conRangoEspecifico);
-        minimo = findViewById(R.id.minimo);
-        maximo = findViewById(R.id.maximo);
-        siDecimales = findViewById(R.id.siDecimales);
-        numeroDecimales = findViewById(R.id.numeroDecimales);
-        radioGroup = findViewById(R.id.radioGroup);
+        lanzarDados = findViewById(R.id.lanzarDados);
+        imagenDados = findViewById(R.id.imagenDados);
+        idImagenes = new int[]{R.drawable.uno,R.drawable.dos,R.drawable.tres,R.drawable.cuatro,
+                R.drawable.cinco,R.drawable.seis};
+
     }
 
-    public void acciones() {
-        radioGroup.setOnCheckedChangeListener(this);
+    private void acciones() {
+        lanzarDados.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                imagenDados.setImageDrawable(getDrawable(R.drawable.idImagenes[0]));
+            }
+        });
 
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //Lo que quiero ejecutar... aqui le digo que es lo que quiero que ejecute
+                imagenDados.setImageDrawable(getDrawable(idImagenes[2]));
+            }
+        },6000);
+        //es un objeto que me permite ejecutar valga la regundancia un segundo hilo
 
     }
 
     @Override
-    public void onCheckedChanged(RadioGroup radioGroup, int i) {
-        switch (radioGroup.getCheckedRadioButtonId()) {
-            case R.id.conRangoEspecifico:
-                maximo.setEnabled(true);
-                minimo.setEnabled(true);
-                break;
-            case R.id.sinRangoEspecifico:
-                maximo.setEnabled(false);
-                minimo.setEnabled(false);
-                break;
-        }
+    public void onClick(View v) {
+
     }
-
-
 }
