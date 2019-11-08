@@ -84,7 +84,7 @@ public class Shuffle extends AppCompatActivity
         }else {
             numeroDecimales.setEnabled(false);
         }
-    }
+    } 
 
     @Override
     public void onClick(View v) {
