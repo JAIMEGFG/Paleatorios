@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.dices:
                 Intent intent1 = new Intent(getApplicationContext(), Dices.class);
                 startActivity(intent1);
+                //intent1.putExtra(tag,);
+                //startactivityforresult(codigo de arranque,intent1);
+                //onactivityresult(,codigo1,codigo2,intent1)
                 Toast.makeText(getApplicationContext(), "Vamos a jugar a los DADOS", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.award:

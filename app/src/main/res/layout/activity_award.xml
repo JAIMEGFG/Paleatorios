@@ -47,11 +47,11 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Generar Ganador"
+            android:text="Borrar jugadores"
             android:textSize="15dp"
             android:gravity="left"
             android:thumb="@drawable/repeat"
-            android:id="@+id/generarGanador"
+            android:id="@+id/borrarJugadores"
             android:backgroundTint="@color/botonGanadores"
             android:textColor="@color/colorBoton">
         </Button>
@@ -68,6 +68,54 @@
         </Button>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
+        android:weightSum="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="match_parent"
+            android:hint="JUGADORES"
+            android:textSize="20dp"
+            android:id="@+id/jugadores">
+        </TextView>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="Quieres Eliminar los Jugadores? ..."
+                android:textColor="@color/letranegra"
+                android:textSize="25dp"></TextView>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="GENERAR GANADOR"
+                android:id="@+id/generarGanador"
+                android:backgroundTint="@color/colorBoton"></Button>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="50dp"
+            android:hint="El GANADOR ES......."
+            android:id="@+id/ganador">
+        </TextView>
+    </LinearLayout>
 
 
 </LinearLayout>

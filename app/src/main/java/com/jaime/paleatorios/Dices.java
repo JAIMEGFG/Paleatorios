@@ -12,7 +12,8 @@ public class Dices extends AppCompatActivity implements View.OnClickListener {
 
     Button lanzarDados;
     ImageView imagenDados;
-    private int[] idImagenes = idImagenes.toArray();
+
+    private int[] idImagenes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,27 +33,31 @@ public class Dices extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void acciones() {
-        lanzarDados.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                imagenDados.setImageDrawable(getDrawable(R.drawable.idImagenes[0]));
-            }
-        });
-
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                //Lo que quiero ejecutar... aqui le digo que es lo que quiero que ejecute
-                imagenDados.setImageDrawable(getDrawable(idImagenes[2]));
-            }
-        },6000);
-        //es un objeto que me permite ejecutar valga la regundancia un segundo hilo
+        lanzarDados.setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View v) {
+
+        Handler handler = new Handler();
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                //Lo que quiero ejecutar... aqui le digo que es lo que quiero que ejecuta
+                for(int i=0;i<6;i++){
+                    imagenDados.setImageResource(idImagenes[(int) (Math.random()*5)]);
+                    try {
+                        Thread.sleep(300);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("aaa");
+                }
+
+            }
+        });
+        //es un objeto que me permite ejecutar valga la regundancia un segundo hilo
 
     }
 }

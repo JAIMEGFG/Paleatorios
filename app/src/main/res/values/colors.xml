@@ -5,4 +5,5 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorBoton">#FFFFFF</color>
     <color name="botonGanadores">#e15f81</color>
+    <color name="letranegra">#000000</color>
 </resources>
