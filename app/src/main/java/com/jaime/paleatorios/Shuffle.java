@@ -31,6 +31,7 @@ public class Shuffle extends AppCompatActivity
     TextView resultados;
     Random r = new Random();
     int random;
+    String elementos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,41 +85,48 @@ public class Shuffle extends AppCompatActivity
         }else {
             numeroDecimales.setEnabled(false);
         }
-    } 
+    }
 
     @Override
     public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.cohete:
+                    elementos = "";
                     if (conRangoEspecifico.isChecked()) {
                         for (int i = 0; i <(Integer.valueOf(numerosTotales.getText()
                                 .toString())); i++) {
                             random = (int) ((Math.random() * ((Integer.valueOf(maximo.getText().toString()) -
                                     Integer.valueOf(minimo.getText().toString())) + 1)) +
                                     Integer.valueOf(minimo.getText().toString()));
-
-                        }resultados.setText(String.valueOf(random + "\n"));
-   
-
-
+                            elementos += random + "\n";
+                        } resultados.setText(String.format("%s",elementos));
 
                     }else if (conRangoEspecifico.isChecked()&& repetir.isChecked()){
-                        for (int i = 0; i <(Integer.valueOf(numerosTotales.getText()
-                                .toString())); i++) {
+                        for (int i = 0; i < Integer.valueOf(numerosTotales.getText()
+                                .toString()); i++) {
                             random = (int) ((Math.random() *((Integer.valueOf(maximo.getText().toString()) -
                                     Integer.valueOf(minimo.getText().toString()) + 1)) +
                                     Integer.valueOf(minimo.getText().toString())));
+                            elementos += random + "\n";
+                        } resultados.setText(String.format("%s",elementos));
 
-
-                        }resultados.setText(String.valueOf(random+"\n"));
-
-
-
-                    }else
-                        random = (int)(Math.random()*100);
+                    }else if (sinRangoEspecifico.isChecked()){
+                        for (int i = 0; i < Integer.valueOf(numerosTotales.getText()
+                                .toString()); i++) {
+                            random = (int) (Math.random() * 100);
+                            elementos += random + "\n";
+                        } resultados.setText(String.format("%s",elementos));
+                    }else {
+                        for (int i = 0; i < Integer.valueOf(numerosTotales.getText()
+                                .toString()); i++) {
+                            random = (int) (Math.random() * 100);
+                            elementos += random + "\n";
+                        } resultados.setText(String.format("%s",elementos));
+                    }
             }
         }
     }
+
 
 // resultados.setText(String.valueOf(random *(Integer.valueOf(numerosTotales.getText()
 //      .toString()))));
