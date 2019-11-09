@@ -110,12 +110,20 @@ public class Shuffle extends AppCompatActivity
                             elementos += random + "\n";
                         } resultados.setText(String.format("%s",elementos));
 
-                    }else if (sinRangoEspecifico.isChecked()){
+                    }else if (sinRangoEspecifico.isChecked()) {
                         for (int i = 0; i < Integer.valueOf(numerosTotales.getText()
                                 .toString()); i++) {
                             random = (int) (Math.random() * 100);
                             elementos += random + "\n";
-                        } resultados.setText(String.format("%s",elementos));
+                        }
+                        resultados.setText(String.format("%s", elementos));
+                    }else if (sinRangoEspecifico.isChecked()&& siDecimales.isChecked()) {
+                        for (int i = 0; i < Integer.valueOf(numerosTotales.getText()
+                                .toString()); i++) {
+                            random = (int) (Math.random() * 100);
+                            elementos += random + "\n";
+                        }
+                        resultados.setText(String.format("%s", elementos));
                     }else {
                         for (int i = 0; i < Integer.valueOf(numerosTotales.getText()
                                 .toString()); i++) {
